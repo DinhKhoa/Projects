@@ -3,7 +3,7 @@ using namespace std;
 int check(int x){
 	if (x <= 0) {
 		cout << "Invalid Number" << endl;
-		system("pause");
+		system("pause");  // stop screen on visual
 	}
 	else return x;
 }
