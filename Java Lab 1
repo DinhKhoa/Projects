@@ -1,0 +1,126 @@
+Ex1 : 
+
+import java.util.Scanner;
+public class Exercise1{ 
+
+	public static void main(String[] args) {
+		
+		Scanner input = new Scanner(System.in);
+		int n;
+	
+		System.out.print("enter n \n ");
+		n=input.nextInt();
+		
+		for (int i = 1;i <= n;i++){
+			for (int j = i;j <= n-1;j++){
+			System.out.print("  ");
+			}
+			for (int k = 1;k <= 2*i -1;k++){
+			System.out.print("* ");
+			}
+                        System.out.println(" ");
+			
+		}}}
+    
+    
+Ex2: 
+
+
+import java.util.Scanner;
+public class Exercise2{
+
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System.in);
+		int n;
+	    do{
+		System.out.print("enter an odd number \n ");
+		n=input.nextInt();}while (n%2==0);
+		
+		for (int i = 1;i <= n;i++){
+			for (int j = i;j <= n-1;j++){
+			System.out.print("  ");
+			}
+			for (int k = 1;k <= 2*i -1;k++){
+				if ((k==1)|| (k==2*i -1)||(i==(n/2+1))){
+			System.out.print("* ");}
+				else System.out.print("  ");
+			}
+                        System.out.println(" ");
+			
+		}
+
+Ex 3 : 
+
+
+
+import java.util.Scanner;
+public class Exercise3 {
+	public static void main(String[] args){
+		Scanner input = new Scanner (System.in);
+		System.out.println("Input text : \n");
+		String n = input.nextLine();
+		int bool = 1 ;
+		while(true){
+		System.out.println("Your Text : " + n);
+		System.out.println("Convert letters to (choose 1,2 or 3)");
+		System.out.println("1.All Uppercase");
+		System.out.println("2.All Lowercase");
+		System.out.println("3.First letter of each word to Uppercase\n");
+		int choice = input.nextInt();
+		
+		switch (choice){
+		case 2 : {String s1=n.toLowerCase();
+			System.out.println(s1+"\n");
+			bool = 0;
+			break;
+		}
+		case 1 :{String s2=n.toUpperCase(); 
+		   System.out.println(s2+"\n");
+		   bool = 0;
+		   break;
+		}
+		case 3 :{
+			String[] words = n.split(" ");
+			for(int i = 0; i < words.length; i++){
+				words[i] = words[i].substring(0, 1).toUpperCase() + words[i].substring(1);
+			}
+			System.out.println(words); 
+			bool =0;
+			break;
+		}
+		default : {
+			System.out.println("You can only choose 1,2 or 3");
+			bool = 0;
+			break;}
+		}
+		}
+		
+	}
+
+}
+
+
+
+Ex4 :
+
+
+
+import java.util.Scanner;
+public class Exercise4{
+	public static void main (String[] args) {
+	Scanner input = new Scanner (System.in);
+	System.out.println("Enter a double type number to calculate the square root using Babylonian Algorithm \n");
+	double n,g ;
+	n = input.nextDouble(); 
+	if (n<2) {
+		System.out.println("Enter another number");
+		n = input.nextDouble(); };
+	g=n/2 ;
+	for (int i = 0; i < 100;i++){
+		
+		g = (g+(n/g))/2;
+	};
+	 System.out.printf("The square root of " + n +" is %.2f", g );
+	}
+}
